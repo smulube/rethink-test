@@ -10,7 +10,7 @@ import (
 )
 
 func init() {
-	initDb()
+	InitDb()
 }
 
 func TestHandleIndexReturnsWithStatusOK(t *testing.T) {
