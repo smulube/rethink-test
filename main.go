@@ -8,7 +8,6 @@ import (
 )
 
 type Bookmark struct {
-	Id    string `gorethink:"id,omitempty"`
 	Title string `gorethink:"title"`
 	Url   string `gorethink:"url"`
 }
