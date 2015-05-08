@@ -1,0 +1,25 @@
+box: wercker/golang
+# Services
+services:
+    - mies/rethinkdb
+# Build definition
+build:
+    # The steps that will be executed on build
+    steps:
+        - setup-go-workspace
+        - script:
+            name: go get
+            code: |
+              cd $WERCKER_SOURCE_DIR
+              go version
+              go get ./...
+
+        - script:
+            name: go build
+            code: |
+              go build ./...
+
+        - script:
+            name: go test
+            code: |
+              go test ./...
